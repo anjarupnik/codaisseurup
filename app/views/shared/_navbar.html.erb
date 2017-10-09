@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
@@ -7,12 +9,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Codaisseurup", root_path, class: "navbar-brand" %>
+    <a style="font-family: 'Pacifico', cursive, serif; font-size: 40px; color: #00CED1;"  <%= link_to "Codaisseurup",
+    root_path, class: "navbar-brand" %></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
 
+
         <% if !user_signed_in? %>
+          <li style = "color:	#B0C4DE; font-weight:bold; margin-top: 15px;">Create Codaisseurup</li>
           <li><%= link_to "Log In", new_user_session_path %></li>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <% else %>
