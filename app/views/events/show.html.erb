@@ -1,0 +1,22 @@
+<div class="panel panel-primary">
+  <div class="panel-heading"><%= @event.name %></div>
+
+  <div class="panel-body">
+
+    <p>Location: <%= @event.location %></p>
+    <p>Host: <%= @event.user.email %></p>
+
+    <!-- Main Info -->
+    <h4>Main Info</h4>
+    <p>Event description: </p>
+    <p>Description: <%= @event.description %> </p>
+    <p>Price: <%= @event.price %> </p>
+    <p>Max. people: <%= @event.capacity %></p>
+
+
+
+  </div>
+
+</div>
+
+<%= link_to "Back", events_path, class: "btn btn-default" %>

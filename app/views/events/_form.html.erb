@@ -1,0 +1,75 @@
+<%= form_for @event do |f| %>
+
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div class="form-group">
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+</div>
+
+<div class="form-group">
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+</div>
+
+<div class="form-group">
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+</div>
+
+<div class="form-group">
+  <%= f.label :capacity %>
+  <%= f.number_field :capacity %>
+<div>
+<br />
+  <label>Amenities</label>
+
+
+  <div class="form-group">
+    <%= f.check_box :includes_food %> Food
+  </div>
+  <div class="form-group">
+    <%= f.check_box :includes_drinks %> Drinks
+  </div>
+
+  <br/>
+
+  <%= f.label :starts_at %>
+  <div class="container">
+      <div class="row">
+          <div class='col-sm-6'>
+              <input type='text' class="form-control" id='datetimepicker4' />
+          </div>
+          <script type="text/javascript">
+              $(function () {
+                  $('#datetimepicker4').datetimepicker();
+              });
+          </script>
+      </div>
+  </div>
+
+  <%= f.label :ends_at %>
+  <div class="container">
+      <div class="row">
+          <div class='col-sm-6'>
+              <input type='text' class="form-control" id='datetimepicker4' />
+          </div>
+          <script type="text/javascript">
+              $(function () {
+                  $('#datetimepicker4').datetimepicker();
+              });
+          </script>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.check_box :active %> Active
+  </div>
+
+
+  <%= f.submit (@event.new_record? ? "Create" : "Update")%>
+</div>
+<% end %>

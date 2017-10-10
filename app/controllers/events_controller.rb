@@ -4,17 +4,19 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
-    @events = current_user.events
+    @events = current_user.event
   end
 
-  def show; end
+  def show
+    @categories = @event.categories
+  end
 
   def new
-    @event = current_user.events.build
+    @event = current_user.event.build
   end
 
   def create
-    @event = current_user.events.build(event_params)
+    @event = current_user.event.build(event_params)
 
     if @event.save
       redirect_to @event, notice: "Event created"
@@ -44,8 +46,7 @@ class EventsController < ApplicationController
       .require(:event)
       .permit(:name, :description, :location, :price, :capacity,
         :includes_food, :includes_drinks, :starts_at, :ends_at,
-      :active
+      :active, category_ids: []
       )
   end
-end
 end

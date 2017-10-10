@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="sidebar-list">
+      <li class="sidebar-item"><%= link_to "Your Events", events_path, class: "sidebar-link active" %></li>
+      <li class="sidebar-item"><%= link_to "Events", events_path, class: "sidebar-link" %></li>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        Your Events
+      </div>
+      <div class="panel-body">
+
+        <% @events.each do |event| %>
+        <div class="row">
+          <div class="col-md-7">
+            <h4><%= event.name %></h4>
+          </div>
+          <div class="col-md-3 right">
+            <%= link_to "View", event, class: "btn btn-default" %>
+            <%= link_to "Update", edit_event_path(event), class: "btn btn-default" %>
+          </div>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+
+    <%= link_to "Add new event", new_event_path, class: "btn btn-primary" %>
+  </div>
+</div>
