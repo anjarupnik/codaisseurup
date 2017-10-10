@@ -20,3 +20,9 @@
 </div>
 
 <%= link_to "Back", events_path, class: "btn btn-default" %>
+<br />
+<br />
+<h4>Categories</h4>
+<% @categories.each do |category| %>
+  <span class="label label-success"><%= category.name %></span>
+<% end %>

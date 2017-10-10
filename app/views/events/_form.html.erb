@@ -69,6 +69,16 @@
     <%= f.check_box :active %> Active
   </div>
 
+  <label>Categories</label>
+
+<%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
+  <div class="form-group">
+    <%= b.check_box(class: "check_box") %> <%= b.object.name %>
+  </div>
+<% end %>
+
+
+
 
   <%= f.submit (@event.new_record? ? "Create" : "Update")%>
 </div>
