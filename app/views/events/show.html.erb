@@ -1,28 +1,47 @@
-<div class="panel panel-primary">
-  <div class="panel-heading"><%= @event.name %></div>
+<style>
+h4 {
+  text-decoration: underline;
+  font-weight: bold;
+
+</style>
+
+<div class="panel panel-info">
+  <div class="panel-heading"><h4><%= @event.name %></h4></div>
 
   <div class="panel-body">
 
-    <p>Location: <%= @event.location %></p>
-    <p>Host: <%= @event.user.email %></p>
-
-    <!-- Main Info -->
-    <h4>Main Info</h4>
-    <p>Event description: </p>
-    <p>Description: <%= @event.description %> </p>
-    <p>Price: <%= @event.price %> </p>
-    <p>Max. people: <%= @event.capacity %></p>
+    <h4>Date: <%= @event.starts_at %></h4>
+    <h4>Event description: </h4>
+    <p><%= @event.description %> </p>
+  <p>  <h4>Price:</h4><%= @event.price %> </p>
 
 
+
+      <h4>Food and drinks?</h4>
+        <ul class="amenities">
+      <li><%= !@event.includes_food ? ("<s>Food</s>").html_safe : "Food" %></li>
+      <li><%= !@event.includes_drinks ? ("<del>Drinks</del>").html_safe : "Drinks" %></li>
+    </ul>
+
+    <h4>Status</h4>
+   <p><%= !@event.active ? ("<del>Unpiublished</del>").html_safe : "Published" %></p>
+
+       <p>Location: <%= @event.location %></p>
+       <p>Host: <%= @event.user.email %></p>
+
+       <br />
+<h4>Categories</h4>
+<div class="col-md-6 center">
+<% @categories.each do |category| %>
+  <span class="label label-info" style="font-size:15px; margin-right: 8px;"><%= category.name %></span>
+<% end %>
+</div>
 
   </div>
 
 </div>
 
+
 <%= link_to "Back", events_path, class: "btn btn-default" %>
-<br />
-<br />
-<h4>Categories</h4>
-<% @categories.each do |category| %>
-  <span class="label label-success"><%= category.name %></span>
-<% end %>
+<br/>
+<br/>
