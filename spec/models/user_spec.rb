@@ -18,4 +18,12 @@ describe "association with event" do
     expect { user.destroy }.to change(Event, :count).by(-1)
   end
 end
+
+
+describe "association with profile" do
+
+  let!(:user) { create :profile }
+
+ it { should have_one(:profile) }
+end
 end

@@ -1,5 +1,5 @@
 class Profile < ApplicationRecord
-  belongs_to :user
+
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -12,6 +12,8 @@ class Profile < ApplicationRecord
   def self.by_initial(letter)
       where("first_name LIKE ?", "#{letter}%").order(:first_name)
     end
+
+
 
 
 end

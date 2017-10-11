@@ -6,4 +6,21 @@
 
     <%= link_to "Sing up", new_user_registration_path, class: "btn btn-info" %>
   </p>
+  <div style="height: 40px;"> </div>
+
+    <div class="row">
+    <h4 style="margin-left: 0;">Categories:</h4>
+  </div>
+    <div class="col-md-6" style = "margin-top: 20px; margin-left: 0;">
+    <% @categories.each do |category| %>
+      <span class="label label-info" style="font-size:15px; margin-right: 8px;"><%= category.name %></span>
+    <% end %>
+    </div>
+
 </div>
+
+
+
+
+
+<div style="height: 50px;"> </div>
