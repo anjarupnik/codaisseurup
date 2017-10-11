@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 describe "shared/_navbar.html.erb" do
-  before { sign_in user }
+
+
+ context "With sign in" do
+ before { sign_in user }
 
   context "without profile" do
     let(:user) { create :user }
@@ -21,5 +24,6 @@ describe "shared/_navbar.html.erb" do
       expect(rendered).to have_content profile.first_name
       expect(rendered).to have_content profile.last_name
     end
+  end
   end
 end
