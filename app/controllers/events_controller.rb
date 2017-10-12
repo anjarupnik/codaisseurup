@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   def index
     @events = current_user.event
-  end
+    end
 
   def show
     @categories = @event.categories
@@ -17,7 +17,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.events.build(event_params)
+    @event = current_user.event.build(event_params)
 
      if @event.save
        image_params.each do |image|
