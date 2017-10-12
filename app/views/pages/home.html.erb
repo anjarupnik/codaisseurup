@@ -5,15 +5,16 @@
   <h1 class="display-3">Meet up with Codaisseurup!!</h1>
 
     <%= link_to "Sing up", new_user_registration_path, class: "btn btn-info" %>
-  </p>
+
   <div style="height: 40px;"> </div>
 
     <div class="row">
-    <h4 style="margin-left: 0;">Categories:</h4>
+    <h4 style="margin-left: 0; margin-top: 0px;">Categories:</h4>
   </div>
-    <div class="col-md-6" style = "margin-top: 20px; margin-left: 0;">
-    <% @categories.each do |category| %>
-      <span class="label label-info" style="font-size:15px; margin-right: 8px;"><%= category.name %></span>
+     <div class="col-md-6" style = "margin-top: 15px; margin-left: 0;">
+      <% @categories.each do |category| %>
+      <span class="label label-info" style="font-size:15px; margin-right: 8px; padding: 10px;">
+        <%=link_to category.name, category_path(category) %></span>
     <% end %>
     </div>
 
