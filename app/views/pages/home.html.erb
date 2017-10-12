@@ -1,6 +1,15 @@
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 
+<style>
+.label a, .badge a {
 
+color: white;
+font-size:25px;
+
+}
+
+
+</style>
 <div class="jumbotron">
   <h1 class="display-3">Meet up with Codaisseurup!!</h1>
 
@@ -13,7 +22,7 @@
   </div>
      <div class="col-md-6" style = "margin-top: 15px; margin-left: 0;">
       <% @categories.each do |category| %>
-      <span class="label label-info" style="font-size:15px; margin-right: 8px; padding: 10px;">
+      <span class="label label-info" style=" margin-right: 8px; padding: 15px;">
         <%=link_to category.name, category_path(category) %></span>
     <% end %>
     </div>
