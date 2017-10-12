@@ -31,11 +31,14 @@ h4 {
 
        <br />
 
-
-<% @event.photos.each do |photo| %>
-  <%= image_tag photo.image %>
-<% end %>
-
+       <% @event.photos.each do |photo| %>
+       <div class="panel panel-default">
+         <div class="panel-heading">
+           <%= image_tag photo.image.thumbnail %>
+         </div>
+       </div>
+       <% end %>
+       
 <h4>Categories</h4>
 <div class="col-md-6 center">
 <% @categories.each do |category| %>

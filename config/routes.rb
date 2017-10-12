@@ -10,5 +10,6 @@ root to: "pages#home"
   resources :users, only: [:show]
   resources :events, except: [:destroy]
   resources :profiles, only: [:new, :edit, :create, :update]
-  
+  resources :photos
+
 end
