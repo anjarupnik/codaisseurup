@@ -30,7 +30,12 @@ h4 {
        <p>Host: <%= @event.user.email %></p>
 
        <br />
-       
+
+
+<% @event.photos.each do |photo| %>
+  <%= image_tag photo.image %>
+<% end %>
+
 <h4>Categories</h4>
 <div class="col-md-6 center">
 <% @categories.each do |category| %>
