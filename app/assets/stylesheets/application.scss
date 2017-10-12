@@ -42,3 +42,39 @@ color: white;
   width: 100px;
   height: 50px;
 }}
+
+.card {
+  color: white;
+  background-color: #85c6b5;
+  width: calc(100%/3 - 40px);
+  padding: 20px;
+  border-radius: 4px;
+  margin: 20px;
+}
+
+.img {
+  height: 150px;
+  overflow: hidden;
+}
+.gallery {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.banner {
+  font-family: 'Pacifico', cursive, serif;
+  color: white;
+  background: linear-gradient(33deg, #b6e3d7, #85c6b5, #17634f);
+  padding: 20px 0 20px;
+  text-align: center;
+  width: 1286px;
+  margin-left: -73px;
+  margin-top: -80px;
+
+  .btn {
+    margin-top: 10px;
+    font-size: 20px;
+  
+  }
+}
