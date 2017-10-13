@@ -31,3 +31,15 @@ describe "#bargain?" do
   it { is_expected.to have_and_belong_to_many :categories }
 end
 end
+
+describe "association with booking" do
+  let(:guest_user) { create :user, email: "guest@user.com" }
+  let(:host_user) { create :user, email: "host@user.com" }
+
+  let!(:event) { create :event, user: host_user }
+  let!(:registration) { create :registration, event: event, user: guest_user }
+
+  it "has guests" do
+    expect(event.guests).to include(guest_user)
+  end
+end

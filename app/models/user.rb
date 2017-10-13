@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :event, dependent: :destroy
   has_one :profile
+  has_many :registrations, dependent: :destroy
+  has_many :registrated_events, through: :registrations, source: :event
 
 
   def profile?

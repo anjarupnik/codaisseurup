@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave', '0.11.2'
 gem 'cloudinary', '1.2.3'
+ruby '2.4.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -50,6 +51,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
 
 group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'
