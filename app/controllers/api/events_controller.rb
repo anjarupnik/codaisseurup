@@ -1,4 +1,4 @@
-class Api::EventsController < ApplicationController
+class Api::EventsController < Api::BaseController
 
   skip_before_action :verify_authenticity_token
 
@@ -13,7 +13,7 @@ class Api::EventsController < ApplicationController
  end
 
  def create
-    event = Event.new(event_params)
+    event = @user.event.build(event_params)
 
     if event.save
       render status: 200, json: event

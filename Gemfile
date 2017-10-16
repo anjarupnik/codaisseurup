@@ -31,6 +31,7 @@ gem 'carrierwave', '0.11.2'
 gem 'cloudinary', '1.2.3'
 ruby '2.4.1'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'has_secure_token'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

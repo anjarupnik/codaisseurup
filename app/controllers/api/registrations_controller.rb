@@ -1,4 +1,4 @@
-class Api::RegistrationsController < ApplicationController
+class Api::RegistrationsController < Api::BaseController
   skip_before_action :verify_authenticity_token
   before_action :set_event
 
@@ -35,7 +35,7 @@ class Api::RegistrationsController < ApplicationController
       }.to_json
     end
   end
-  
+
 
   def destroy
     registration = @event.registrations.find(params[:id])
