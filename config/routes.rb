@@ -14,6 +14,7 @@ root to: "pages#home"
   end
   namespace :api do
     resources :events
+    resources :categories
   end
 
   resources :profiles, only: [:new, :edit, :create, :update]
