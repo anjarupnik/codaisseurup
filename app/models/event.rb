@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   has_and_belongs_to_many :categories
   has_many :photos
   has_many :registrations, dependent: :destroy
@@ -29,7 +29,7 @@ scope :starts_on_date, ->(starts_at){
   where('starts_at == ? ', starts_at)
 }
 scope :ends_on_date, ->(ends_at){
-  where('ends_at == ? ', ends_at)    
+  where('ends_at == ? ', ends_at)
 }
 
 
