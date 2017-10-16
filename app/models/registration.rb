@@ -1,5 +1,5 @@
 class Registration < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   belongs_to :event
 
   before_save  :set_status, :set_total_price

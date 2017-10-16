@@ -13,7 +13,10 @@ root to: "pages#home"
     resources :registrations, only: [:create]
   end
   namespace :api do
-    resources :events
+    resources :events 
+      resources :events do
+      resources :registrations, only: [:create, :update, :destroy]
+    end
     resources :categories
   end
 
