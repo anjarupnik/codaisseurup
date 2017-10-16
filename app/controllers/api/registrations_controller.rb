@@ -35,7 +35,7 @@ class Api::RegistrationsController < ApplicationController
       }.to_json
     end
   end
-
+  
 
   def destroy
     registration = @event.registrations.find(params[:id])
