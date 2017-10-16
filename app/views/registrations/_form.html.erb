@@ -1,0 +1,17 @@
+<%= form_for [@event, @event.registrations.new] do |f| %>
+  <p><strong>Price per person:</strong> <span>€</span> <%= @event.price %></p>
+
+  <hr>
+
+  <div class="form-group">
+    <label>Number of guests:</label>
+    <%= f.select :guests_count, options_for_select([1 , 2, 3]), class: "form-control" %>
+  </div>
+
+<hr>
+
+
+  <div class="actions">
+    <%= f.submit "Make a reservation", class: "btn btn-info" %>
+  </div>
+<% end %>

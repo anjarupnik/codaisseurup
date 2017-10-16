@@ -14,10 +14,23 @@ class Event < ApplicationRecord
    end
 
    def self.order_by_price
-   order :price
+    order :price
+  end
+
+ def self.order_by_name
+   order(name: :asc)
  end
 
-
+ scope :published, -> { where(active: true) }
+ scope :starts_before_ends_after, ->(starts_at, ends_at) {
+  where('starts_at < ? AND ends_at > ?', starts_at, ends_at)
+}
+scope :starts_on_date, ->(starts_at){
+  where('starts_at == ? ', starts_at)
+}
+scope :ends_on_date, ->(ends_at){
+  where('ends_at == ? ', ends_at)    
+}
 
 
 end

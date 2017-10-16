@@ -30,9 +30,8 @@ describe "#bargain?" do
 
   it { is_expected.to have_and_belong_to_many :categories }
 end
-end
 
-describe "association with booking" do
+describe "association with registration" do
   let(:guest_user) { create :user, email: "guest@user.com" }
   let(:host_user) { create :user, email: "host@user.com" }
 
@@ -42,4 +41,26 @@ describe "association with booking" do
   it "has guests" do
     expect(event.guests).to include(guest_user)
   end
+end
+
+  describe ".order_by_name" do
+     subject { Event.order_by_name }
+
+     let(:event1) { create :event, name: "Anja" }
+     let(:event2) { create :event, name: "Zoo" }
+
+     it "is sorted on name in ascending order" do
+       expect(subject).to eq([event1, event2])
+     end
+   end
+
+   describe ".published" do
+      subject { Event.published }
+
+      let(:event) { create :event, active: true }
+
+      it "has active event" do
+        expect(subject).to include(event)
+      end
+    end
 end

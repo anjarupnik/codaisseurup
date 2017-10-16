@@ -12,6 +12,9 @@ root to: "pages#home"
   resources :events do
     resources :registrations, only: [:create]
   end
+  namespace :api do
+    resources :events
+  end
 
   resources :profiles, only: [:new, :edit, :create, :update]
   resources :photos
