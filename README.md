@@ -1,24 +1,15 @@
-# README
+# Codaisseurup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Down-sized version of Meetup
 
-Things you may want to cover:
+Built with: Ruby on Rails
 
-* Ruby version
+![alt text](http://res.cloudinary.com/mdfchucknorris/image/upload/v1512146302/Screenshot_from_2017-12-01_17-34-01_xrtmbd.png )
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Getting Started
+```bash
+git clone git@github.com:anjarupnik/codaisseurup.git
+cd codaisseurup
+rails db:create db:migrate db:seed
+rails server
+```
